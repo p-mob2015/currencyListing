@@ -1,0 +1,24 @@
+{
+  "preset": "react-native",
+  "collectCoverage": true,
+  "moduleDirectories": [
+    "js"
+  ],
+  "transform": {
+    "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js"
+  },
+  "moduleNameWrapper": {
+    "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/jest/assetTransformer.js", 
+    "\\.(css|less)$": "<rootDir>/jest/assetTransformer.js"
+  },
+  "setupFiles": [
+    "<rootDir>/jest/setup.js"
+  ],
+  "transformIgnorePatterns": [
+    "node_modules/(?!(jest-)?react-native)"
+  ],
+  "coveragePathIgnorePatterns": [
+    "/node_modules/",
+    "/jest"
+  ]
+}

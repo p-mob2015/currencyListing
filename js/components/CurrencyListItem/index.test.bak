@@ -1,0 +1,23 @@
+// TBD
+import React from 'react';
+import {shallow} from 'enzyme';
+import Faker from 'faker';
+import CurrencyListItem from '.';
+
+describe('CurrencyListItem', () => {
+  describe('Rendering', () => {
+    const data = {
+      id: 1,
+      name: 'Bitcoin',
+      symbol: 'BTC',
+      total_supply: 10,
+      quote: { USD: { price: 200.054 } },
+      slug: 'btc',
+    };
+
+    it('should match to snapshot', () => {
+      const component = shallow(<CurrencyListItem data={data} />);
+      expect(component).toMatchSnapshot();
+    });
+  });
+});
